@@ -1,6 +1,10 @@
 # Version History
 
 ## March 28, 2026
+
+#### Version 1.10.5 - Multiline split in Voice Preset
+- **Split Option** - Added Split audio by Paragraph in voice Preset
+
 #### Version 1.10.1 - Bug fixes
 - **Fixed Errors In Install Scripts** - Install was not properly specifiying what version of pytorchaudio to install
 
