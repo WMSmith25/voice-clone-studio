@@ -1,5 +1,9 @@
 # Version History
 
+## March 28, 2026
+#### Version 1.10.1 - Bug fixes
+- **Fixed Errors In Install Scripts** - Install was not properly specifiying what version of pytorchaudio to install
+
 ## March 3, 2026
 #### Version 1.10.0 - VibeVoice Training, Trained Model Inference & Streaming Voice Presets
 
