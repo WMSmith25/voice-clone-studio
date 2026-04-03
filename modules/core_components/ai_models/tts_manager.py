@@ -586,8 +586,8 @@ class TTSManager:
 
     def generate_voice_clone_fish_speech(self, text, voice_sample_path,
                                          ref_text="", seed=-1,
-                                         temperature=0.8, top_p=0.8, top_k=30,
-                                         repetition_penalty=1.1,
+                                         temperature=0.9, top_p=0.9, top_k=30,
+                                         repetition_penalty=1.05,
                                          max_new_tokens=0, chunk_length=300,
                                          progress_callback=None):
         """Generate speech using Fish Speech S2 Pro.
@@ -2561,12 +2561,12 @@ class TTSManager:
             return self.generate_voice_clone_fish_speech(
                 text=text, voice_sample_path=sample_wav_path,
                 ref_text=sample_ref_text, seed=seed,
-                temperature=float(fp.get('temperature', 0.8)),
-                top_p=float(fp.get('top_p', 0.8)),
+                temperature=float(fp.get('temperature', 0.9)),
+                top_p=float(fp.get('top_p', 0.9)),
                 top_k=int(fp.get('top_k', 30)),
-                repetition_penalty=float(fp.get('repetition_penalty', 1.1)),
-                max_new_tokens=int(fp.get('max_new_tokens', 0)),
-                chunk_length=int(fp.get('chunk_length', 300)),
+                repetition_penalty=float(fp.get('repetition_penalty', 1.05)),
+                max_new_tokens=int(fp.get('max_new_tokens', 2048)),
+                chunk_length=int(fp.get('chunk_length', 1000)),
                 progress_callback=progress_callback,
             )
         else:

@@ -561,10 +561,10 @@ def create_chatterbox_advanced_params(
 
 
 def create_fish_speech_advanced_params(
-    initial_temperature=0.8,
-    initial_top_p=0.8,
+    initial_temperature=0.9,
+    initial_top_p=0.9,
     initial_top_k=30,
-    initial_repetition_penalty=1.1,
+    initial_repetition_penalty=1.05,
     initial_max_new_tokens=0,
     initial_chunk_length=300,
     visible=False
@@ -589,7 +589,7 @@ def create_fish_speech_advanced_params(
     with gr.Accordion("Fish Speech Advanced Parameters", open=False, visible=visible) as accordion:
         with gr.Row():
             components['temperature'] = gr.Slider(
-                minimum=0.7,
+                minimum=0.8,
                 maximum=1.0,
                 value=initial_temperature,
                 step=0.01,
@@ -597,8 +597,8 @@ def create_fish_speech_advanced_params(
                 info="Sampling temperature (lower = more stable)"
             )
             components['top_p'] = gr.Slider(
-                minimum=0.7,
-                maximum=0.95,
+                minimum=0.8,
+                maximum=1.0,
                 value=initial_top_p,
                 step=0.01,
                 label="Top-p",
@@ -634,7 +634,7 @@ def create_fish_speech_advanced_params(
             )
             components['chunk_length'] = gr.Slider(
                 minimum=100,
-                maximum=512,
+                maximum=1000,
                 value=initial_chunk_length,
                 step=10,
                 label="Chunk Length",

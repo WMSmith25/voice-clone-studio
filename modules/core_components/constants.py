@@ -497,8 +497,8 @@ LUXTTS_SAMPLE_RATE = 48000
 
 # Fish Speech S2 Generation Defaults (matching official webui)
 FISH_SPEECH_GENERATION_DEFAULTS = {
-    "temperature": 0.8,
-    "top_p": 0.8,
+    "temperature": 0.9,
+    "top_p": 0.9,
     "top_k": 30,
     "repetition_penalty": 1.1,
     "max_new_tokens": 0,  # 0 = auto (model max length)

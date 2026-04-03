@@ -391,8 +391,8 @@ class VoiceCloneTool(Tool):
                                    lux_rms=0.01, lux_ref_duration=30, lux_guidance_scale=3.0,
                                    cb_exaggeration=0.5, cb_cfg_weight=0.5, cb_temperature=0.8,
                                    cb_repetition_penalty=1.2, cb_top_p=1.0, cb_language="English",
-                                   fs_temperature=0.8, fs_top_p=0.8, fs_top_k=30,
-                                   fs_repetition_penalty=1.1, fs_max_new_tokens=0, fs_chunk_length=300,
+                                   fs_temperature=0.9, fs_top_p=0.9, fs_top_k=30,
+                                   fs_repetition_penalty=1.05, fs_max_new_tokens=0, fs_chunk_length=300,
                                    progress=gr.Progress()):
             """Generate audio using voice cloning via unified engine dispatch."""
             from modules.core_components.audio_utils import make_stem_from_text, resolve_output_stem
