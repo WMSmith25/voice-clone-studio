@@ -1028,6 +1028,7 @@ class VoiceCloneTool(Tool):
         components['vv_params_accordion'].expand(restore_fn, outputs=restore_outputs)
         components['luxtts_params_accordion'].expand(restore_fn, outputs=restore_outputs)
         components['cb_params_accordion'].expand(restore_fn, outputs=restore_outputs)
+        components['fs_params_accordion'].expand(restore_fn, outputs=restore_outputs)
 
         # --- Cross-tab prompt routing ---
         import modules.core_components.prompt_hub as _prompt_hub

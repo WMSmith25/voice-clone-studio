@@ -564,7 +564,7 @@ def create_fish_speech_advanced_params(
     initial_temperature=0.9,
     initial_top_p=0.9,
     initial_top_k=30,
-    initial_repetition_penalty=1.05,
+    initial_repetition_penalty=1.1,
     initial_max_new_tokens=0,
     initial_chunk_length=300,
     visible=False
