@@ -622,13 +622,16 @@ def make_stem_from_text(text, sample_name=None, max_words=8):
     safe = re.sub(r'_+', '_', safe).strip('_').lower()
     text_part = safe or "clip"
 
+    max_chars = 50
+
     if sample_name:
         prefix = "".join(c if (c.isalnum() or c in "-_") else "_" for c in sample_name)
         prefix = re.sub(r'_+', '_', prefix).strip('_').lower()
         if prefix:
-            return f"{prefix}_{text_part}"
+            stem = f"{prefix}_{text_part}"
+            return stem[:max_chars].rstrip('_')
 
-    return text_part
+    return text_part[:max_chars].rstrip('_')
 
 
 def resolve_output_stem(base_stem, output_dir, clip_count=1):
