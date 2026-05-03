@@ -54,6 +54,20 @@ set WHISPER_CHOICE=%errorlevel%
 echo.
 
 echo ========================================
+echo Optional: Install DeepFilterNet for audio denoising?
+echo DeepFilterNet removes background noise from voice samples.
+echo Requires a Rust compiler to build from source on Windows.
+echo Install Rust from https://rustup.rs to enable this feature.
+echo ========================================
+echo.
+echo   1. Yes - Install DeepFilterNet
+echo   2. No  - Skip
+echo.
+choice /C 12 /T 99 /D 2 /M "Install DeepFilterNet?"
+set DEEPFILTER_CHOICE=%errorlevel%
+echo.
+
+echo ========================================
 echo Optional: Install llama.cpp for LLM prompt generation?
 echo llama.cpp powers the Prompt Manager's local LLM feature.
 echo Lets you generate TTS and SFX prompts using Qwen3 models.
@@ -250,6 +264,7 @@ echo Installing Fish Speech S2 codec...
 pip install --no-deps descript-audio-codec descript-audiotools >nul 2>&1
 
 REM DeepFilterNet audio denoising (optional - requires Rust compiler for source build)
+if not "%DEEPFILTER_CHOICE%"=="1" goto :skip_deepfilter
 echo Installing DeepFilterNet (audio denoising)...
 pip install deepfilternet
 if %errorlevel% neq 0 (
@@ -258,6 +273,7 @@ if %errorlevel% neq 0 (
     echo To install later: Install Rust from https://rustup.rs then run: pip install deepfilternet
 )
 echo.
+:skip_deepfilter
 
 REM Faster Qwen3 TTS (CUDA graph acceleration, lightweight - auto-install)
 echo Installing Faster Qwen3 TTS (CUDA graph acceleration)...
